@@ -7,3 +7,8 @@
 	branch-name = rev-parse --abbrev-ref HEAD
 	pushc = "!sh -c 'git push -u ${1:-origin} $(git branch-name)' -"
  	histfull = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
+        # Pushes given tag to remote 'origin' repo (or the remote passed as the second parameter)
+        ptag = "!sh -c 'git push ${2:-origin} $1' -"
+        # Removes given tag from remote 'origin' repo (or the remote passed as the second parameter)
+        rmtag = "!sh -c 'git push ${2:-origin} :refs/tags/$1' -"
+
