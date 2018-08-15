@@ -13,7 +13,8 @@
     # Removes given tag from remote 'origin' repo (or the remote passed as the second parameter)
     rmtag = "!sh -c 'git push ${2:-origin} :refs/tags/$1' -"
     dc = "!sh -c 'git diff --cached --color | diff-so-fancy | less'"
-    df = "!sh -c 'git diff --color | diff-so-fancy | less'"
+    df = diff
+    dff = "!sh -c 'git diff --color | diff-so-fancy | less'"
     mr = "!sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -"
 
 
